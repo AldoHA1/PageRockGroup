@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Boletos</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilosBoletos.css">
+</head>
+<body id="start">
+	<div class="container-fluid">
+		<div class="row">
+			<header>
+				<div class="sdd">
+					<a href="Index.html" style="color:white;"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				</div>
+				<div class="container-fluid">
+				<h1 class="text-center">Boletos</h1>
+				</div>
+			</header>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="text-center col-xs-12 col-md-12" id="textoentradas">
+				<h2>Compra tus boletos de inmediato antes de que se agoten</h2>
+				<br>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover table-condensed">
+				<thead>
+					<tr class="active">
+						<th>ID</th>
+						<th>Lugar</th>
+						<th>Fecha</th>
+						<th>Hora</th>
+						<th>Costo</th>
+					</tr>
+				</thead>
+				<tr id="uno">
+					<td>1</td>
+					<td>Costa Rica</td>
+					<td>12/08/17</td>
+					<td>18:00</td>
+					<td>180&#36;</td>
+				</tr>
+				<tr id="dos">
+					<td>2</td>
+					<td>Australia</td>
+					<td>01/10/17</td>
+					<td>19:00</td>
+					<td>120 &#36;</td>
+				</tr>
+				<tr id="tres">
+					<td>3</td>
+					<td>New York</td>
+					<td>16/11/17</td>
+					<td>20:00</td>
+					<td>130 &#36;</td>
+				</tr>
+				<tr id="cuatro">
+					<td>4</td>
+					<td>Canada</td>
+					<td>01/12/17</td>
+					<td>19:00</td>
+					<td>98 &#36;</td>
+				</tr>
+				<tr id="cinco">
+					<td>5</td>
+					<td>Mexico</td>
+					<td>01/02/18</td>
+					<td>19:30</td>
+					<td>140 &#36;</td>
+				</tr>
+				<tr id=seis>
+					<td>6</td>
+					<td>Panama</td>
+					<td>02/03/18</td>
+					<td>19:30</td>
+					<td>125 &#36;</td>
+				</tr>
+
+			</table>
+		</div>
+
+		</div>
+	</div>
+
+	<!-------------------------------------------------------------------------------------------------------------->
+	
+	<div class="container-fluid">
+		<form class="form">
+			<div class="form-group">
+				<label for="ids" style="font-size: 16pt;">ID</label>
+				<input type="text" class="form-control" placeholder="ID" maxlength="10" id="idsc" required>
+			</div>
+			<label for="comprar" style="color: #424242; font-size: 16pt;"> Seleccione cuantos va comprar</label>
+				<select id="comprar">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			<div class="clearfix"></div>	
+			<button class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#myModal" id="accpago" style="margin-left: 1px;" onclick="validar()">Acceder al Pago</button>
+		</form>
+		<div class="clearfix"></div>
+		<!---------------------------------------------------------------------------------------------------------->
+		<div class="container">
+			<div class="text-center info alert-info collapse" id="hecho">
+			<a href="#" id="cerrarHecho" class="close" data-dismiss="alert">&times;</a>
+			<p id="msjHecho"></p>
+		</div>
+		</div>
+ 
+	<!--Modal------------------------------------------------------------------------------------------------------>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" id="cerrarModel" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       			<h4 class="modal-title" id="myModalLabel">Pago de boletos</h4>
+      		</div>
+      <div class="modal-body">
+
+      	<h4 class="text-center text-info">Escribe Los Datos De Tu Tarjeta Acá Abajo</h4>
+
+      	<img src="img/shoponline.png" alt="tarjetas" class="img-responsive center-block">
+
+      	<div class="text-center danger alert-danger collapse" id="alerta">
+			<a href="#" id="cerrarAlerta" class="close" data-dismiss="alert">&times;</a>
+			<p id="msjAlerta"></p>
+      	</div>
+
+      	<form class="form">
+			<div class="input-group">
+			<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+			<input type="text" placeholder="Email" name="email" class="form-control" id="emails" required>
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></div>
+				<input type="password" class="form-control" placeholder="*****************" id="passtarjet" required>
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+				<input type="text" placeholder="MM/AA" class="form-control" id="mesaño" required>
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+				<input type="text" placeholder="123" class="form-control" id="numeroatras" required>
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></div>
+				<input type="text" class="form-control" readonly="readonly" id="TotalPago" value="0">
+			</div>
+      	</form>
+       </div>
+      <div class="modal-footer">
+       	<button type="submit" class="btn btn-primary" id="boton1">Pagar</button>
+      </div>
+    	</div>
+  	</div>
+	</div>
+		
+	</div>
+
+	<footer class="text-center">
+	<br>
+  		<p>Creado por Aldo Steve Herrera Arroyo 2017 Universidad Fidélitas</p> 
+</footer>
+	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="codigoBoletos.js"></script>
+</body>
+</html>
